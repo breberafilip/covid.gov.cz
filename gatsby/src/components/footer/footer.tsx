@@ -15,7 +15,7 @@ const DRUPAL_INTERNAL_IDS = {
 };
 
 const Footer: React.FC = () => {
-  const result = useStaticQuery<IFooterLinksQuery>(query);
+  const result = useStaticQuery<IFooterLinksQuery>(query); // eslint-disable-line @typescript-eslint/no-use-before-define
 
   const getContentByDrupalInternalId = (internalId: string) => {
     const edge = result.allBlocks.edges.find(({ node }) => {

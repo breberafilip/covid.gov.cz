@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { useLocation } from '@reach/router';
 
 export const gLang = (): string => {
-  var glang = 'cs';
+  let glang = 'cs';
   const location = useLocation();
   const path = location.pathname;
 
@@ -28,7 +28,7 @@ const I18n = (id: string, lang?: string) => {
       }
     `,
   );
-  var I18nArray = I18nObject.allTranslation.nodes;
+  let I18nArray = I18nObject.allTranslation.nodes;
   I18nArray = I18nArray.filter((item) => {
     return item.langcode === lang && item.source === id;
   });
